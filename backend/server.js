@@ -105,8 +105,8 @@ const upload = multer({
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'ozkalkaan490@gmail.com',
-        pass: 'maso phti pvzv soho' 
+        user: process.env.GMAIL_USER, // YENİ: Şifreyi koddan çıkardık, .env'den alıyor
+        pass: process.env.GMAIL_PASS  // YENİ: Şifreyi koddan çıkardık, .env'den alıyor
     }
 });
 
@@ -430,7 +430,7 @@ app.use((err, req, res, next) => {
 // ============================================
 app.listen(PORT, () => {
     console.log(`🚀 Sunucu başarıyla çalışıyor!`);
-    console.log(`📍 Adres: http://localhost:${PORT}`);
+    console.log(`📍 Adres: https://kariyeralmanya.onrender.com`);
     console.log(`📁 Uploads klasörü: ${uploadDir}`);
     console.log(`💾 Veritabanı dosyaları: data.json, jobs.json`);
     
