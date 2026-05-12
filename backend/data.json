@@ -1,0 +1,179 @@
+[
+  {
+    "id": 1771926663855,
+    "name": "Kaan özkal",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 546 763 43 75",
+    "message": "npm startnpm startnpm startnpm start",
+    "category": "Eş ve Çocuk Vizesi",
+    "files": [],
+    "date": "2026-02-24T09:51:03.855Z",
+    "status": "reddedildi"
+  },
+  {
+    "id": 1773838363129,
+    "name": "Kaan özkal",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 546 763 43 75",
+    "message": "/* --- YENİ İŞ İLANI KARTLARI (RESİMLİ VE KOTALI) --- */\r\n.ka-jobs-grid { \r\n  display: grid; \r\n  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); \r\n  gap: 30px; \r\n}\r\n\r\n.ka-job-card {\r\n  background: white; \r\n  border-radius: 20px; \r\n  box-shadow: 0 10px 20px rgba(0,0,0,0.08); \r\n  transition: transform 0.3s;\r\n  overflow: hidden; /* Resim köşelerden taşmasın */\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n",
+    "category": "İlan Başvurusu: XXX  Firması Tır şoförü / Kurye ",
+    "files": [],
+    "date": "2026-03-18T12:52:43.129Z",
+    "status": "reddedildi"
+  },
+  {
+    "id": 1774264632266,
+    "name": "lorem ipsum",
+    "email": "ornek@gmail.com",
+    "phone": "0555 555 5555",
+    "message": "import React, { useEffect } from 'react';\r\nimport { useNavigate } from 'react-router-dom';\r\nimport './App.css'; // veya import './SpecialUniversity.css'; (CSS'i nereye koyduysan)\r\n\r\nconst SpecialUniversity = ({ onOpenForm }) => {\r\n  const navigate = useNavigate();\r\n\r\n  useEffect(() => {\r\n    window.scrollTo(0, 0); // Sayfa açıldığında en üste kaydır\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"ka-special-uni-page animate-pop-in\">\r\n      \r\n      {/* --- PREMIUM HERO ALANI --- */}\r\n      <header className=\"ka-uni-hero\">\r\n        <div className=\"ka-uni-hero-overlay\"></div>\r\n        <div className=\"ka-uni-hero-content\">\r\n          <div className=\"ka-uni-badge\">🌟 YÜKSEK ONAY ORANI</div>\r\n          <h1 className=\"ka-uni-title\" style={{fontSize: 'clamp(32px, 5vw, 60px)'}}>\r\n            HAYALİNİ <br/>\r\n            <span style={{color: '#b2560d'}}>ALMANYA'DA EĞİTİME</span> DÖNÜŞTÜRÜYORUZ 🇩🇪\r\n          </h1>\r\n          <p className=\"ka-uni-desc\" style={{fontSize: '22px', fontWeight: '400'}}>\r\n            Biz sadece başvuru yapmıyoruz. Seni baştan sona vizeye hazır hale getiriyoruz. \r\n            <strong> Profesyonel vize hazırlık sistemimizle</strong> ret riskini minimuma indiriyoruz.\r\n          </p>\r\n          <button \r\n            className=\"ka-btn-solid ka-uni-main-btn\" \r\n            onClick={() => onOpenForm(\"Özel Üniversite VIP Başvuru\")}\r\n          >\r\n            SÜRECİ GÜVENLE BAŞLAT ➔\r\n          </button>\r\n        </div>\r\n      </header>\r\n\r\n      {/* --- STRATEJİ VE SİSTEM ALANI (BENTO GRID TASARIMI) --- */}\r\n      <section className=\"ka-uni-info-section\" style={{paddingTop: '80px', paddingBottom: '80px'}}>\r\n        <div style={{textAlign: 'center', marginBottom: '60px', maxWidth: '800px', margin: '0 auto 60px auto'}}>\r\n          <h2 style={{color: '#162f4b', fontWeight: '900', fontSize: '36px', marginBottom: '20px', textTransform: 'uppercase'}}>\r\n            Neden Bizimle Vize Şansı Çok Daha Yüksek?\r\n          </h2>\r\n          <p style={{fontSize: '18px', color: '#4b5563', lineHeight: '1.8'}}>\r\n            Çünkü biz süreci rastgele değil, stratejik yürütüyoruz. <strong>Doğru hazırlanan başvurularda vize onay ihtimali oldukça yüksektir.</strong> Tüm süreci sizin yerinize, eksiksiz bir sistemle yönetiyoruz.\r\n          </p>\r\n        </div>\r\n\r\n        <div className=\"ka-uni-info-grid\" style={{gridTemplateColumns: '1fr', gap: '30px', maxWidth: '1100px'}}>\r\n          \r\n          {/* İKİ BÜYÜK KART: KABUL SÜRECİ VE VİZE FARKIMIZ */}\r\n          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>\r\n            \r\n            {/* Kart 1: Kabul Süreci (Lacivert Tema) */}\r\n            <div className=\"ka-uni-box\" style={{ background: '#162f4b', borderColor: '#162f4b' }}>\r\n              <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>\r\n                <span style={{fontSize: '32px'}}>⚡</span>\r\n                <h3 style={{color: 'white', margin: 0, fontSize: '24px'}}>Üniversite Kabul Süreci</h3>\r\n              </div>\r\n              <p style={{color: '#dceddd', fontSize: '16px', marginBottom: '20px', opacity: '0.9'}}>\r\n                Senin profiline en uygun okulu buluyor, kabul alma sürecini tamamen biz hallediyoruz:\r\n              </p>\r\n              <ul style={{listStyle: 'none', padding: 0, margin: 0, color: 'white', fontSize: '16px', lineHeight: '2.2'}}>\r\n                <li><strong style={{color: '#b2560d'}}>✔</strong> Özel üniversiteler</li>\r\n                <li><strong style={{color: '#b2560d'}}>✔</strong> Hızlı kabul veren programlar</li>\r\n                <li><strong style={{color: '#b2560d'}}>✔</strong> Dil şartı esnek bölümler</li>\r\n              </ul>\r\n            </div>",
+    "category": "Özel Üniversite VIP Başvuru",
+    "files": [],
+    "status": "reddedildi",
+    "date": "2026-03-23T11:17:12.266Z"
+  },
+  {
+    "id": 1776675412363,
+    "name": "Kaan",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "<button className=\"ka-btn-solidnavigate('/hizmet/ozel-universite')}>Detayları Gör</button>",
+    "category": "Doğrudan İşe Yerleştirme",
+    "files": [
+      "1776675412359-ig1.png"
+    ],
+    "status": "reddedildi",
+    "date": "2026-04-20T08:56:52.363Z"
+  },
+  {
+    "id": 1776846874231,
+    "fullname": "Kaan Özkal- 22.04.2026",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 546 763 43 75",
+    "message": "Hello world its a testing message",
+    "category": "İlan Başvurusu: Test ilan",
+    "job_title": "",
+    "job_id": null,
+    "files": [
+      "1776846874206-CV_Kaan___zkal.pdf"
+    ],
+    "status": "onaylandı",
+    "cv_path": "1776846874206-CV_Kaan___zkal.pdf",
+    "date": "2026-04-22T08:34:34.231Z",
+    "note": "test message",
+    "noteUpdatedAt": "2026-04-24T08:24:36.831Z"
+  },
+  {
+    "id": 1777019112548,
+    "fullname": "Kaan Özkal- 24.04.2026",
+    "email": "enes-kaan-emir@hotmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "klsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmalklsafmlskfmal",
+    "category": "Aile Birleşimi Vizesi",
+    "job_title": "",
+    "job_id": null,
+    "files": [],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": null,
+    "date": "2026-04-24T08:25:12.549Z"
+  },
+  {
+    "id": 1777019840521,
+    "fullname": "Kaan Özkal- 24.04.2026-2",
+    "email": "ornek@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "hello world",
+    "category": "İş Görüşmesi Simülasyonu",
+    "job_title": "Belirtilmemiş",
+    "job_id": null,
+    "files": [],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": null,
+    "date": "2026-04-24T08:37:20.521Z"
+  },
+  {
+    "id": 1777025031310,
+    "fullname": "özkal",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "dnbfmajbfakjhafk",
+    "category": "Doğrudan İşe Yerleştirme",
+    "job_title": "Belirtilmemiş",
+    "job_id": null,
+    "files": [],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": null,
+    "date": "2026-04-24T10:03:51.310Z"
+  },
+  {
+    "id": 1777025085609,
+    "fullname": "Kaan Özkal- 24.04.2026-3",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "kdnlskdjflsdkjfklsdjflsdkfjsdlkfj",
+    "category": "İlan Başvurusu: Test ilan",
+    "job_title": "Belirtilmemiş",
+    "job_id": null,
+    "files": [],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": null,
+    "date": "2026-04-24T10:04:45.609Z"
+  },
+  {
+    "id": 1778070869949,
+    "fullname": "Kaan Ozkal 06.05.2026",
+    "email": "ozkalkaan490@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
+    "category": "Doğrudan İşe Yerleştirme",
+    "job_title": "Doğrudan İşe Yerleştirme",
+    "job_id": null,
+    "files": [
+      "1778070869916-Screenshot_2026_05_05_152327.png"
+    ],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": "1778070869916-Screenshot_2026_05_05_152327.png",
+    "date": "2026-05-06T12:34:29.949Z"
+  },
+  {
+    "id": 1778580819374,
+    "fullname": "KAAN",
+    "email": "melisizmir8@gmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "maso phti pvzv sohomaso phti pvzv sohomaso phti pvzv sohomaso phti pvzv sohomaso phti pvzv soho",
+    "category": "İlan Başvurusu: Test ilan",
+    "careerLevel": "Uzman/Yönetici",
+    "job_title": "Test ilan",
+    "job_id": null,
+    "files": [
+      "1778580819338-Screenshot_2025_12_27_015105.png"
+    ],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": "1778580819338-Screenshot_2025_12_27_015105.png",
+    "date": "2026-05-12T10:13:39.374Z"
+  },
+  {
+    "id": 1778581080934,
+    "fullname": "KAAN",
+    "email": "enes-kaan-emir@hotmail.com",
+    "phone": "+90 555 555 55 55",
+    "message": "maso phti pvzv sohomaso phti pvzv sohomaso phti pvzv sohomaso phti pvzv soho",
+    "category": "Doğrudan İşe Yerleştirme",
+    "careerLevel": "Yeni Mezun",
+    "job_title": "Doğrudan İşe Yerleştirme",
+    "job_id": null,
+    "files": [
+      "1778581080906-02_EZB_SOF__R_NEU_MEHMET_BARAN_KONAR__1_.pdf"
+    ],
+    "status": "bekliyor",
+    "note": "",
+    "cv_path": "1778581080906-02_EZB_SOF__R_NEU_MEHMET_BARAN_KONAR__1_.pdf",
+    "date": "2026-05-12T10:18:00.934Z"
+  }
+]

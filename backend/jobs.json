@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1776846387157,
+    "title": "Test ilan",
+    "location": "Test İlan",
+    "type": "Tam Zamanlı",
+    "description": "# Terminal'de# Terminal'de\r\ncd backend\r\nrm data.json jobs.json\r\nnode server.js\r\ncd backend\r\nrm data.json jobs.json\r\nnode server.js",
+    "quota": 20,
+    "appliedCount": 0,
+    "category": "Lojistik",
+    "image": "1776846968775-khont.jpeg",
+    "date": "2026-04-22T08:26:27.157Z",
+    "workingHours": "09:00 - 18:00 (Hafta içi)",
+    "educationLevel": "Lisans",
+    "experienceYears": 2,
+    "requirements": [
+      "# Terminal'de cd backend rm data.json jobs.json node server.js"
+    ],
+    "skills": {
+      "required": [
+        "# Terminal'de cd backend rm data.json jobs.json node server.js"
+      ],
+      "preferred": [
+        "Test "
+      ]
+    },
+    "benefits": [
+      "# Terminal'de cd backend rm data.json jobs.json node server.js"
+    ],
+    "languageRequirements": {
+      "german": {
+        "level": "B1",
+        "required": true
+      },
+      "english": {
+        "level": "B1",
+        "required": false
+      }
+    }
+  }
+]
