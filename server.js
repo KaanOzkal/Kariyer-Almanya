@@ -456,7 +456,7 @@ app.use((err, req, res, next) => {
 // ============================================
 app.listen(PORT, () => {
     console.log(`🚀 Sunucu başarıyla çalışıyor!`);
-    console.log(`📍 Adres: https://kariyeralmanya.onrender.com`);
+    console.log(`📍 Adres: https://kariyer-almanya.onrender.com`);
     console.log(`📁 Uploads klasörü: ${uploadDir}`);
     console.log(`💾 Veritabanı dosyaları: data.json, jobs.json`);
     

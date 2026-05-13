@@ -437,7 +437,7 @@ app.get('/api/stats', (req, res) => {
 // REACT YÖNLENDİRMESİ (EN ÖNEMLİ KISIM)
 // ============================================
 // API rotaları dışında gelen her şeyi React'in index.html dosyasına yönlendir.
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
     const indexPath = path.join(__dirname, 'build', 'index.html');
     if (fs.existsSync(indexPath)) {
         res.sendFile(indexPath);
@@ -456,7 +456,7 @@ app.use((err, req, res, next) => {
 // ============================================
 app.listen(PORT, () => {
     console.log(`🚀 Sunucu başarıyla çalışıyor!`);
-    console.log(`📍 Adres: https://kariyeralmanya.onrender.com`);
+    console.log(`📍 Adres: https://kariyer-almanya.onrender.com`);
     console.log(`📁 Uploads klasörü: ${uploadDir}`);
     console.log(`💾 Veritabanı dosyaları: data.json, jobs.json`);
     
