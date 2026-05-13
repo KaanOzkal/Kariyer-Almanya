@@ -8,9 +8,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 require('dotenv').config();
 
+// ============================================
+// MIDDLEWARE
+// ============================================
 app.use(cors());
 app.use(express.json());
+
+// 1. Uploads klasörünü dışarıya aç
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// 2. React Build klasörünü dışarıya aç (Render üzerinde frontend servisi için)
+app.use(express.static(path.join(__dirname, 'build')));
 
 // ============================================
 // DOSYA VE VERİTABANI KONTROLLERİ
@@ -105,13 +113,13 @@ const upload = multer({
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.GMAIL_USER, // YENİ: Şifreyi koddan çıkardık, .env'den alıyor
-        pass: process.env.GMAIL_PASS  // YENİ: Şifreyi koddan çıkardık, .env'den alıyor
+        user: process.env.GMAIL_USER, 
+        pass: process.env.GMAIL_PASS  
     }
 });
 
 // ============================================
-// 1. BAŞVURU ROTALARI (BİRLEŞTİRİLMİŞ ROTA)
+// 1. BAŞVURU ROTALARI 
 // ============================================
 
 app.post('/api/apply', upload.array('documents', 5), async (req, res) => {
@@ -166,18 +174,18 @@ app.post('/api/apply', upload.array('documents', 5), async (req, res) => {
             }
         }
 
-        // 2. ADIM: E-POSTA İLE GÖNDER
-        // Diske kaydedilen dosyaları e-posta ekine dönüştür
-        const attachments = files.map(file => ({
-            filename: file.originalname,
-            path: file.path // Sunucudaki kayıtlı dosyanın yolunu okur
-        }));
+        // 2. ADIM: E-POSTA İLE GÖNDER (Mail hatası sistemi durdurmasın diye Try-Catch eklendi)
+        try {
+            const attachments = files.map(file => ({
+                filename: file.originalname,
+                path: file.path
+            }));
 
-        const mailOptions = {
-            from: 'ozkalkaan490@gmail.com',
-            to: 'ozkalkaan490@gmail.com', // Kendine gönderiyorsun
-            subject: `BERLINER Yeni İş Başvurusu: ${newApp.fullname} - ${newApp.job_title}`,
-            text: `
+            const mailOptions = {
+                from: process.env.GMAIL_USER,
+                to: 'ozkalkaan490@gmail.com', // Kendine gönderiyorsun
+                subject: `BERLINER Yeni İş Başvurusu: ${newApp.fullname} - ${newApp.job_title}`,
+                text: `
 Sistemden yeni bir başvuru aldınız!
 
 👤 Aday Bilgileri:
@@ -197,14 +205,19 @@ Kariyer Seviyesi: ${newApp.careerLevel}
 ${newApp.message || 'Mesaj bırakılmadı.'}
 
 📎 Belgeler (CV vb.) bu maile ek olarak (attachment) eklenmiştir ve sunucuya yedeklenmiştir.
-            `,
-            attachments: attachments
-        };
+                `,
+                attachments: attachments
+            };
 
-        await transporter.sendMail(mailOptions);
-        console.log("✅ E-posta başarıyla gönderildi!");
+            await transporter.sendMail(mailOptions);
+            console.log("✅ E-posta başarıyla gönderildi!");
+        } catch (mailError) {
+            console.error("⚠️ Mail iletilemedi ama başvuru sisteme kaydedildi:", mailError.message);
+        }
 
-        res.status(200).json({ message: 'Başvuru alındı ve e-posta iletildi!', application: newApp });
+        // Mail gitse de gitmese de kullanıcı başarılı ekranını görür
+        res.status(200).json({ message: 'Başvuru alındı!', application: newApp });
+
     } catch (error) { 
         console.error('Apply hatası:', error);
         res.status(500).json({ message: 'Sunucu hatası: ' + error.message }); 
@@ -212,7 +225,7 @@ ${newApp.message || 'Mesaj bırakılmadı.'}
 });
 
 // ============================================
-// DİĞER ROTALAR (DEĞİŞTİRİLMEDİ)
+// DİĞER ROTALAR (SENİN ORİJİNAL KODUNUN AYNISI)
 // ============================================
 
 app.get('/api/applications', (req, res) => {
@@ -417,6 +430,19 @@ app.get('/api/stats', (req, res) => {
         res.json(stats);
     } catch (error) {
         res.status(500).json({ message: 'İstatistik alınamadı' });
+    }
+});
+
+// ============================================
+// REACT YÖNLENDİRMESİ (EN ÖNEMLİ KISIM)
+// ============================================
+// API rotaları dışında gelen her şeyi React'in index.html dosyasına yönlendir.
+app.get('*', (req, res) => {
+    const indexPath = path.join(__dirname, 'build', 'index.html');
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        res.status(404).send("Frontend build klasörü bulunamadı. Lütfen 'npm run build' yapıp build klasörünü server.js yanına koyun.");
     }
 });
 
