@@ -1,12 +1,16 @@
+// YENİ: dotenv EN ÜSTE ALINDI! (Şifreler ve Port önceden okunmak zorunda)
+require('dotenv').config(); 
+
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
-const nodemailer = require('nodemailer'); // E-posta paketi eklendi
+const nodemailer = require('nodemailer');
+
 const app = express();
+// PORT artık .env dosyasından güvenle okunabilir
 const PORT = process.env.PORT || 5000;
-require('dotenv').config();
 
 // ============================================
 // MIDDLEWARE
@@ -93,7 +97,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'application/pdf'];
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     } else {
@@ -174,7 +178,7 @@ app.post('/api/apply', upload.array('documents', 5), async (req, res) => {
             }
         }
 
-        // 2. ADIM: E-POSTA İLE GÖNDER (Mail hatası sistemi durdurmasın diye Try-Catch eklendi)
+        // 2. ADIM: E-POSTA İLE GÖNDER
         try {
             const attachments = files.map(file => ({
                 filename: file.originalname,
@@ -183,7 +187,7 @@ app.post('/api/apply', upload.array('documents', 5), async (req, res) => {
 
             const mailOptions = {
                 from: process.env.GMAIL_USER,
-                to: 'ozkalkaan490@gmail.com', // Kendine gönderiyorsun
+                to: 'ozkalkaan490@gmail.com', 
                 subject: `BERLINER Yeni İş Başvurusu: ${newApp.fullname} - ${newApp.job_title}`,
                 text: `
 Sistemden yeni bir başvuru aldınız!
@@ -225,7 +229,7 @@ ${newApp.message || 'Mesaj bırakılmadı.'}
 });
 
 // ============================================
-// DİĞER ROTALAR (SENİN ORİJİNAL KODUNUN AYNISI)
+// DİĞER ROTALAR
 // ============================================
 
 app.get('/api/applications', (req, res) => {
@@ -434,10 +438,9 @@ app.get('/api/stats', (req, res) => {
 });
 
 // ============================================
-// REACT YÖNLENDİRMESİ (EN ÖNEMLİ KISIM)
+// REACT YÖNLENDİRMESİ (DÜZELTİLDİ: '*' kullanıldı)
 // ============================================
-// API rotaları dışında gelen her şeyi React'in index.html dosyasına yönlendir.
-app.get(/.*/, (req, res) => {
+app.get('*', (req, res) => {
     const indexPath = path.join(__dirname, 'build', 'index.html');
     if (fs.existsSync(indexPath)) {
         res.sendFile(indexPath);
